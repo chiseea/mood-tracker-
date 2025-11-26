@@ -1,8 +1,5 @@
-# mood/controllers/mood_controller.py
 from rich.prompt import Prompt, IntPrompt
 from mood.models.mood_entry import MoodEntry as ModelMoodEntry
-# note: when run from project root, package path will be mood.models...
-# ensure imports match your folder structure; here we assume package root is project/
 from mood.models.mood_entry import MoodEntry
 from mood.models.special_mood_entry import SpecialMoodEntry
 
@@ -12,7 +9,6 @@ class MoodController:
         self.view = mood_view
 
     def add_mood_interactive(self, user):
-        # input flow (keeps using Rich Prompt in views/controllers)
         tanggal = Prompt.ask("Masukkan tanggal (YYYY-MM-DD)")
         mood_level = IntPrompt.ask("Nilai mood (1–10)")
         aktivitas = Prompt.ask("Aktivitas")
@@ -39,6 +35,6 @@ class MoodController:
             self.service.delete_mood(int(mood_id))
             self.view.show_deleted(mood_id)
         else:
-            # invalid input handled simply
             from rich.console import Console
             Console().print("[yellow]ID tidak valid atau dibatalkan.[/yellow]")
+
