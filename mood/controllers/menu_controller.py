@@ -10,7 +10,6 @@ class MenuController:
         self.console = None
 
     def run(self, nama):
-        # main loop - uses menu_view to draw menu and delegates
         from rich.console import Console
         self.console = Console()
         while True:
@@ -31,3 +30,4 @@ class MenuController:
             elif pilihan == "5":
                 self.console.print(Panel.fit(Align.center("[bold red]Terima kasih sudah menggunakan sistem ini![/bold red]\n[cyan]Sampai jumpa lagi![/cyan]"), border_style="bright_red"))
                 break
+
