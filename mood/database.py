@@ -1,4 +1,4 @@
-# mood/database.py
+
 import sqlite3
 from rich.console import Console
 
@@ -36,3 +36,4 @@ class Database:
     def close(self):
         self.conn.close()
         console.print("[dim]Database connection closed.[/dim]")
+
