@@ -1,1 +1,0 @@
-# mood package initializer
